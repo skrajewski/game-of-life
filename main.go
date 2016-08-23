@@ -93,7 +93,7 @@ func main()  {
             tm.MoveCursor(0, 0);
             tm.Println("Generation: ", counter, "| Seed: ", seed, "| Time: ", time.Since(timer));
             tm.Println("Press [Enter] to finish");
-            
+
             counter++;
 
             printWorld(board);
