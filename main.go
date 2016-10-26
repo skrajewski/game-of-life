@@ -5,6 +5,7 @@ import (
     "time"
     "bufio"
     "os"
+    "strconv"
     tm "github.com/buger/goterm"
 )
 
@@ -69,10 +70,21 @@ func main()  {
     seed := rand.Int63();
     rand.Seed(seed);
 
-    width := 90;
+    args := os.Args[1:];
+
+    width := 80;
     height := 22;
     counter := 0;
     timer := time.Now().UTC();
+
+    if len(args) > 0 {
+        width, _ = strconv.Atoi(args[0]);
+    }
+
+    if len(args) > 1 {
+        height, _ = strconv.Atoi(args[1]);
+    }
+
     board := make([][]int, height);
 
     for i := 0; i < height; i++ {
